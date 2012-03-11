@@ -1,0 +1,73 @@
+
+Wordpress Single Page
+v 0.0.1
+
+Wordpress v 3.3.1
+Brunch v 0.1.0
+
+---------------------
+
+Wordpress Single Page is a starting place for building single-page JavaScript applications on top of Wordpress via the Brunch Framework (Backbone.js, CoffeeScript, EcoTemplates) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
+
+About Brunch:
+"A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity."
+
+http://brunch.io
+
+About Wordpress JSON-API:
+"JSON API allows you to retrieve and manipulate WordPress content using HTTP requests. There are three main goals:
+
+Provide a simple, consistent external interface
+Create a stable, understandable internal implementation
+Enable new types of extensions for WordPress
+This plugin was created at The Museum of Modern Art for the weblog Inside/Out, which is served from Ruby on Rails. Instead of reimplementing the site templates as a WordPress theme, we opted for a Rails front-end that displays content served from a WordPress back-end. JSON API provides the necessary interface for retrieving content and accepting comment submissions."
+
+http://wordpress.org/extend/plugins/json-api/other_notes/
+
+
+
+---------------------
+Installation
+---------------------
+
+Copy the files to an appropriate location on your server and then follow the below.
+
+Requirements:
+
+1.  Node.JS:
+http://nodejs.org/
+
+An installer can be found there for Mac and Windows, as well as more detailed instructions on customization.
+
+2.  Brunch
+After installing node, execute via terminal 
+
+npm install -g brunch
+
+(More information can be found at http://brunch.io)
+
+3.  PHP4 or greater
+
+4.  MySQL
+
+
+***
+
+
+Wordpress Setup
+
+1.  Follow the standard Wordpress installation instructions at Wordpress.org:  http://codex.wordpress.org/Installing_WordPress
+2.  Once installed, navigate to the plugins page and enable JSON-API. 
+
+
+Brunch Setup
+1.  While the default brunch application has already been initialized in themes/blankslate/application, you'll still need to watch the directory for changes and output the files to the default theme directory.  cd into 'application' and execute
+
+brunch watch --output ../ --server
+
+This builds your project and outputs the .js files into themes/blankslate/scripts and css files into themes/blankslate/styles.
+
+More options can be found at http://brunch.io  
+
+
+
