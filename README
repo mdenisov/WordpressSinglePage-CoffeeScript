@@ -17,9 +17,10 @@ http://brunch.io
 About Wordpress JSON-API:
 "JSON API allows you to retrieve and manipulate WordPress content using HTTP requests. There are three main goals:
 
-Provide a simple, consistent external interface
-Create a stable, understandable internal implementation
-Enable new types of extensions for WordPress
+- Provide a simple, consistent external interface
+- Create a stable, understandable internal implementation
+- Enable new types of extensions for WordPress
+
 This plugin was created at The Museum of Modern Art for the weblog Inside/Out, which is served from Ruby on Rails. Instead of reimplementing the site templates as a WordPress theme, we opted for a Rails front-end that displays content served from a WordPress back-end. JSON API provides the necessary interface for retrieving content and accepting comment submissions."
 
 http://wordpress.org/extend/plugins/json-api/other_notes/
