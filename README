@@ -10,7 +10,27 @@ Brunch v 0.1.0
 Wordpress Single Page is a starting place for building single-page JavaScript applications on top of Wordpress via the Brunch Framework (Backbone.js, CoffeeScript, EcoTemplates) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
 
 About Brunch:
-"A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity."
+"A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity.
+
+Standing on the shoulders of giants
+
+Instead of reinventing the wheel, brunch assembles awesome wheels:
+
+- MVC framework: Backbone.js
+- Libs: jQuery (or zepto), Underscore
+- Programming languages: JavaScript, CoffeeScript, Roy
+- Templates: Eco, Mustache
+- Styles: Stylus, LESS, Sass
+
+Everything from the list is optional, you can choose only projects you want. In addition, we have
+
+- HTML5 Boilerplate normalize.css, helpers.css & index.html
+- Great directory structure
+- A simple express webserver
+- require.js-compatible module system
+- Source code minifiers: uglify.js for javascript and clean-css for stylesheets.
+- textmate / sublime2 bundle
+- growl / libnotify support
 
 http://brunch.io
 
