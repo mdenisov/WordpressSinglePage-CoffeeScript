@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'BetecknalMedium';
+    src: url('webfonts/betecknalowercase-webfont.eot');
+    src: url('webfonts/betecknalowercase-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/betecknalowercase-webfont.woff') format('woff'),
+         url('webfonts/betecknalowercase-webfont.ttf') format('truetype'),
+         url('webfonts/betecknalowercase-webfont.svg#betecknalowercase-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BetecknalBold';
+    src: url('webfonts/betecknalowercasebold-webfont.eot');
+    src: url('webfonts/betecknalowercasebold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/betecknalowercasebold-webfont.woff') format('woff'),
+         url('webfonts/betecknalowercasebold-webfont.ttf') format('truetype'),
+         url('webfonts/betecknalowercasebold-webfont.svg#betecknalowercasebold-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PetitaBoldRegular';
+    src: url('webfonts/petita/petitabold-webfont.eot');
+    src: url('webfonts/petita/petitabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/petita/petitabold-webfont.woff') format('woff'),
+         url('webfonts/petita/petitabold-webfont.ttf') format('truetype'),
+         url('webfonts/petita/petitabold-webfont.svg#PetitaBoldRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PetitaLightRegular';
+    src: url('webfonts/petita/petitalight-webfont.eot');
+    src: url('webfonts/petita/petitalight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/petita/petitalight-webfont.woff') format('woff'),
+         url('webfonts/petita/petitalight-webfont.ttf') format('truetype'),
+         url('webfonts/petita/petitalight-webfont.svg#PetitaLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PetitaMediumRegular';
+    src: url('webfonts/petita/petitamedium-webfont.eot');
+    src: url('webfonts/petita/petitamedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/petita/petitamedium-webfont.woff') format('woff'),
+         url('webfonts/petita/petitamedium-webfont.ttf') format('truetype'),
+         url('webfonts/petita/petitamedium-webfont.svg#PetitaMediumRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
