@@ -36,8 +36,10 @@ class exports.ApplicationView extends Backbone.View
 				url: ApplicationConfig.API + "get_recent_posts/"
 				success: ( e ) ->
 					console.log e
+					$( "#view-container" ).html( "Successfully received recent posts" )
 				error: ( e ) ->
 					console.log e
+					$( "#view-container" ).html( "Error: #{ e }" )
 		})
 		
 	###--------------------------------------
