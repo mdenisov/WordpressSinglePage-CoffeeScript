@@ -11355,26 +11355,36 @@ window.jQuery = window.$ = jQuery;
 
 }).call(this);
 (this.require.define({
-  "helpers": function(exports, require, module) {
-    (function() {
+  "routers/main_router": function(exports, require, module) {
+    
+/*!
+ @author 
+ @since
+*/
 
-  exports.BrunchApplication = (function() {
+(function() {
+  var __hasProp = Object.prototype.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-    function BrunchApplication() {
-      var _this = this;
-      jQuery(function() {
-        _this.initialize(_this);
-        return Backbone.history.start();
-      });
+  exports.MainRouter = (function(_super) {
+
+    __extends(MainRouter, _super);
+
+    function MainRouter() {
+      MainRouter.__super__.constructor.apply(this, arguments);
     }
 
-    BrunchApplication.prototype.initialize = function() {
-      return null;
+    MainRouter.prototype.routes = {
+      '': 'home'
     };
 
-    return BrunchApplication;
+    MainRouter.prototype.home = function() {
+      return $('body').html(app.applicationView.render().el);
+    };
 
-  })();
+    return MainRouter;
+
+  })(Backbone.Router);
 
 }).call(this);
 
@@ -11417,6 +11427,163 @@ window.jQuery = window.$ = jQuery;
   })(BrunchApplication);
 
   window.app = new exports.Application;
+
+}).call(this);
+
+  }
+}));
+(this.require.define({
+  "views/ApplicationView": function(exports, require, module) {
+    
+/*!
+ @author 
+ @since
+*/
+
+(function() {
+  var ApplicationConfig, ApplicationModel, indexTemplate,
+    __hasProp = Object.prototype.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
+
+  ApplicationConfig = require('config/ApplicationConfig').ApplicationConfig;
+
+  ApplicationModel = require('models/ApplicationModel').ApplicationModel;
+
+  indexTemplate = require('templates/index');
+
+  exports.ApplicationView = (function(_super) {
+
+    __extends(ApplicationView, _super);
+
+    /*--------------------------------------
+    	//+ CLASS CONSTANTS
+    	--------------------------------------
+    */
+
+    ApplicationView.prototype.VIEW_CONTAINER_EL = "#view-container";
+
+    /*--------------------------------------
+    	//+ CONSTRUCTOR
+    	--------------------------------------
+    */
+
+    function ApplicationView() {
+      _.bindAll(this);
+      this.applicationModel = new ApplicationModel();
+      this._addEventListeners();
+    }
+
+    ApplicationView.prototype.render = function() {
+      $('body').html(indexTemplate());
+      return $.ajax({
+        url: ApplicationConfig.API + "get_recent_posts/",
+        success: function(e) {
+          return console.log(e);
+        },
+        error: function(e) {
+          return console.log(e);
+        }
+      });
+    };
+
+    /*--------------------------------------
+    	//+ PUBLIC METHODS
+    	--------------------------------------
+    */
+
+    /*--------------------------------------
+    	//+ EVENT HANDLERS
+    	--------------------------------------
+    */
+
+    ApplicationView.prototype._onModelChange = function(e) {};
+
+    /*--------------------------------------
+    	//+ PRIVATE & PROTECTED INSTANCE METHODS
+    	--------------------------------------
+    */
+
+    ApplicationView.prototype._addEventListeners = function() {
+      return this.applicationModel.bind('change', this._onModelChange);
+    };
+
+    ApplicationView.prototype._removeEventListeners = function() {
+      return this.applicationModel.unbind('change', this._onModelChange);
+    };
+
+    ApplicationView.prototype._destroy = function(view) {
+      return console.log('destroy view');
+    };
+
+    return ApplicationView;
+
+  })(Backbone.View);
+
+}).call(this);
+
+  }
+}));
+(this.require.define({
+  "helpers": function(exports, require, module) {
+    (function() {
+
+  exports.BrunchApplication = (function() {
+
+    function BrunchApplication() {
+      var _this = this;
+      jQuery(function() {
+        _this.initialize(_this);
+        return Backbone.history.start();
+      });
+    }
+
+    BrunchApplication.prototype.initialize = function() {
+      return null;
+    };
+
+    return BrunchApplication;
+
+  })();
+
+}).call(this);
+
+  }
+}));
+(this.require.define({
+  "config/ApplicationConfig": function(exports, require, module) {
+    
+/*!
+ @author 
+ @since
+*/
+
+(function() {
+
+  exports.ApplicationConfig = (function() {
+
+    function ApplicationConfig() {}
+
+    /*--------------------------------------
+    	//+ CLASS CONSTANTS
+    	--------------------------------------
+    */
+
+    ApplicationConfig.BASE_URL = "http://localhost:8888/CN/WPSinglePage/www/";
+
+    ApplicationConfig.WP_TEMPLATE_URL = ApplicationConfig.BASE_URL + "wp-content/themes/blankslate/";
+
+    ApplicationConfig.API = ApplicationConfig.BASE_URL + "api/";
+
+    ApplicationConfig.API_METHODS = {
+      byCategory: ApplicationConfig.API + "get_category_posts/?slug=",
+      byPost: ApplicationConfig.API + "get_post/?slug=",
+      byPage: ApplicationConfig.API + "get_page/?slug=",
+      bySearch: ApplicationConfig.API + "get_search_results/?search="
+    };
+
+    return ApplicationConfig;
+
+  })();
 
 }).call(this);
 
@@ -11483,42 +11650,6 @@ window.jQuery = window.$ = jQuery;
   }
 }));
 (this.require.define({
-  "routers/main_router": function(exports, require, module) {
-    
-/*!
- @author 
- @since
-*/
-
-(function() {
-  var __hasProp = Object.prototype.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
-
-  exports.MainRouter = (function(_super) {
-
-    __extends(MainRouter, _super);
-
-    function MainRouter() {
-      MainRouter.__super__.constructor.apply(this, arguments);
-    }
-
-    MainRouter.prototype.routes = {
-      '': 'home'
-    };
-
-    MainRouter.prototype.home = function() {
-      return $('body').html(app.applicationView.render().el);
-    };
-
-    return MainRouter;
-
-  })(Backbone.Router);
-
-}).call(this);
-
-  }
-}));
-(this.require.define({
   "templates/index": function(exports, require, module) {
     module.exports = function(__obj) {
   var _safe = function(value) {
@@ -11562,120 +11693,5 @@ window.jQuery = window.$ = jQuery;
     return obj;
   })());
 };
-  }
-}));
-(this.require.define({
-  "views/ApplicationView": function(exports, require, module) {
-    
-/*!
- @author 
- @since
-*/
-
-(function() {
-  var ApplicationConfig, ApplicationModel, indexTemplate,
-    __hasProp = Object.prototype.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
-
-  ApplicationConfig = require('config/ApplicationConfig').ApplicationConfig;
-
-  ApplicationModel = require('models/ApplicationModel').ApplicationModel;
-
-  indexTemplate = require('templates/index');
-
-  exports.ApplicationView = (function(_super) {
-
-    __extends(ApplicationView, _super);
-
-    /*--------------------------------------
-    	//+ CLASS CONSTANTS
-    	--------------------------------------
-    */
-
-    ApplicationView.prototype.VIEW_CONTAINER_EL = "#view-container";
-
-    /*--------------------------------------
-    	//+ CONSTRUCTOR
-    	--------------------------------------
-    */
-
-    function ApplicationView() {
-      _.bindAll(this);
-      this.applicationModel = new ApplicationModel();
-      this._addEventListeners();
-    }
-
-    ApplicationView.prototype.render = function() {
-      return $('body').html(indexTemplate());
-    };
-
-    /*--------------------------------------
-    	//+ PUBLIC METHODS
-    	--------------------------------------
-    */
-
-    /*--------------------------------------
-    	//+ EVENT HANDLERS
-    	--------------------------------------
-    */
-
-    ApplicationView.prototype._onModelChange = function(e) {};
-
-    /*--------------------------------------
-    	//+ PRIVATE & PROTECTED INSTANCE METHODS
-    	--------------------------------------
-    */
-
-    ApplicationView.prototype._addEventListeners = function() {
-      return this.applicationModel.bind('change', this._onModelChange);
-    };
-
-    ApplicationView.prototype._removeEventListeners = function() {
-      return this.applicationModel.unbind('change', this._onModelChange);
-    };
-
-    ApplicationView.prototype._destroy = function(view) {
-      return console.log('destroy view');
-    };
-
-    return ApplicationView;
-
-  })(Backbone.View);
-
-}).call(this);
-
-  }
-}));
-(this.require.define({
-  "config/ApplicationConfig": function(exports, require, module) {
-    
-/*!
- @author 
- @since
-*/
-
-(function() {
-
-  exports.ApplicationConfig = (function() {
-
-    function ApplicationConfig() {}
-
-    /*--------------------------------------
-    	//+ CLASS CONSTANTS
-    	--------------------------------------
-    */
-
-    ApplicationConfig.GAME_NAME = "Square Pop!";
-
-    ApplicationConfig.DEFAULT_NUMBER_OF_SQUARES = 30;
-
-    ApplicationConfig.AUTO_START = false;
-
-    return ApplicationConfig;
-
-  })();
-
-}).call(this);
-
   }
 }));

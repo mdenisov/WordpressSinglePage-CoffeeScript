@@ -32,6 +32,14 @@ class exports.ApplicationView extends Backbone.View
 		
 		$( 'body' ).html( indexTemplate() )
 		
+		$.ajax({
+				url: ApplicationConfig.API + "get_recent_posts/"
+				success: ( e ) ->
+					console.log e
+				error: ( e ) ->
+					console.log e
+		})
+		
 	###--------------------------------------
 	//+ PUBLIC METHODS
 	--------------------------------------###

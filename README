@@ -79,7 +79,7 @@ Quick-start:
 If you would like to skip the standard Wordpress install, a quick-start database has been provided in the folder db_quickstart.  
 
 1.  Create a new MySQL database and import wp_single_page.sql
-2.  Open the database and adjust rows 3 and 39 in wp_options to point to your install directory
+2.  Open the database and modify rows 3 and 39 in wp_options to point to your install directory
 3.  Open wp-config and adjust the db, username and pass to match your settings
 4.  Login at /install_directory/wp-admin; user: admin; pass: password.  These settings can be changed in the Users tab in the back-end
 
@@ -89,11 +89,12 @@ From scratch:
 
 
 Brunch Setup
-1.  While the default brunch application has already been initialized in themes/blankslate/application, you'll still need to watch the directory for changes and output the files to the default theme directory.  cd into 'application' and execute
+1.  Navigate to www/wp-content/themes/blankslate/application/app/config/ApplicationConfig.coffee and adjust the constant BASE_URL to point to your install directory
+2.  While the default brunch application has already been initialized in themes/blankslate/application, you'll still need to watch the directory for changes and output the files to the default theme directory.  cd into 'application' then execute
 
 brunch watch --output ../ --server
 
-This builds your project and outputs the .js files into themes/blankslate/scripts and css files into themes/blankslate/styles.
+This builds your project and outputs the .js files into themes/blankslate/scripts and css files into themes/blankslate/styles, which Wordpress's index.php loads upon entry to the site.
 
 More options can be found at http://brunch.io  
 
