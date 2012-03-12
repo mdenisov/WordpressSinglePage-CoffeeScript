@@ -29,7 +29,7 @@ Everything from the list is optional, you can choose only projects you want. In 
 - require.js-compatible module system
 - Source code minifiers: uglify.js for javascript and clean-css for stylesheets.
 - textmate / sublime2 bundle
-- growl / libnotify support
+- growl / libnotify support"
 
 http://brunch.io
 
