@@ -2,12 +2,13 @@
 Wordpress Single Page
 v 0.0.1
 
+Wordpress Single Page is a starting place for building single-page JavaScript applications on top of Backbone.js via the Brunch Framework (Backbone.js, CoffeeScript, EcoTemplates) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
+
+Current Version Dependencies:
 Wordpress v 3.3.1
 Brunch v 0.1.0
 
 ---------------------
-
-Wordpress Single Page is a starting place for building single-page JavaScript applications on top of Backbone.js via the Brunch Framework (Backbone.js, CoffeeScript, EcoTemplates) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
 
 About Brunch:
 "A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity.
