@@ -94,7 +94,7 @@ Brunch Setup
 
 brunch watch --output ../ --server
 
-This builds your project and outputs the .js files into themes/blankslate/scripts and css files into themes/blankslate/styles, which Wordpress's index.php loads upon entry to the site.
+This builds your project whenever you save a file and outputs the .js files into themes/blankslate/scripts and css files into themes/blankslate/styles, which Wordpress's index.php loads upon entry to the site.
 
 More options can be found at http://brunch.io  
 
