@@ -21,3 +21,7 @@ class exports.ApplicationConfig
 		byPost: @API + "get_post/?slug="
 		byPage: @API + "get_page/?slug="
 		bySearch: @API + "get_search_results/?search="
+		
+	@BROWSER:
+  	name: ""
+  	version: -1

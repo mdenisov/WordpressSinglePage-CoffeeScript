@@ -16,4 +16,19 @@ class exports.Application extends BrunchApplication
     @router = new MainRouter
     @applicationView = new ApplicationView
 
-window.app = new exports.Application
+$ ->
+	
+	ApplicationConfig.BROWSER = {
+		name: navigator.appName
+		version: jQuery.browser.version
+	}
+	
+	if jQuery.browser.msie is true
+		if jQuery.browser.version <= 8.0
+			
+			CFInstall.check({
+				mode: "overlay" 
+				destination: "http://www.yoursiteurl.com"
+			})
+	
+	window.app = new exports.Application

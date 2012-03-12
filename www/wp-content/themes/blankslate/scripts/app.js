@@ -11391,49 +11391,59 @@ window.jQuery = window.$ = jQuery;
   }
 }));
 (this.require.define({
-  "templates/index": function(exports, require, module) {
-    module.exports = function(__obj) {
-  var _safe = function(value) {
-    if (typeof value === 'undefined' && value == null)
-      value = '';
-    var result = new String(value);
-    result.ecoSafe = true;
-    return result;
-  };
-  return (function() {
-    var __out = [], __self = this, _print = function(value) {
-      if (typeof value !== 'undefined' && value != null)
-        __out.push(value.ecoSafe ? value : __self.escape(value));
-    }, _capture = function(callback) {
-      var out = __out, result;
-      __out = [];
-      callback.call(this);
-      result = __out.join('');
-      __out = out;
-      return _safe(result);
+  "initialize": function(exports, require, module) {
+    
+/*!
+ @author 
+ @since
+*/
+
+(function() {
+  var ApplicationView, BrunchApplication, MainRouter,
+    __hasProp = Object.prototype.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
+
+  BrunchApplication = require('helpers').BrunchApplication;
+
+  MainRouter = require('routers/main_router').MainRouter;
+
+  ApplicationView = require('views/ApplicationView').ApplicationView;
+
+  exports.Application = (function(_super) {
+
+    __extends(Application, _super);
+
+    function Application() {
+      Application.__super__.constructor.apply(this, arguments);
+    }
+
+    Application.prototype.initialize = function() {
+      this.router = new MainRouter;
+      return this.applicationView = new ApplicationView;
     };
-    (function() {
-    
-      _print(_safe('\n<div id="content">\n  <h1>\n      Hey!\n  </h1>\n  \n  <div id="view-container">\n    \n  </div>\n</div>\n'));
-    
-    }).call(this);
-    
-    return __out.join('');
-  }).call((function() {
-    var obj = {
-      escape: function(value) {
-        return ('' + value)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;');
-      },
-      safe: _safe
-    }, key;
-    for (key in __obj) obj[key] = __obj[key];
-    return obj;
-  })());
-};
+
+    return Application;
+
+  })(BrunchApplication);
+
+  $(function() {
+    ApplicationConfig.BROWSER = {
+      name: navigator.appName,
+      version: jQuery.browser.version
+    };
+    if (jQuery.browser.msie === true) {
+      if (jQuery.browser.version <= 8.0) {
+        CFInstall.check({
+          mode: "overlay",
+          destination: "http://www.yoursiteurl.com"
+        });
+      }
+    }
+    return window.app = new exports.Application;
+  });
+
+}).call(this);
+
   }
 }));
 (this.require.define({
@@ -11587,6 +11597,11 @@ window.jQuery = window.$ = jQuery;
       bySearch: ApplicationConfig.API + "get_search_results/?search="
     };
 
+    ApplicationConfig.BROWSER = {
+      name: "",
+      version: -1
+    };
+
     return ApplicationConfig;
 
   })();
@@ -11656,44 +11671,48 @@ window.jQuery = window.$ = jQuery;
   }
 }));
 (this.require.define({
-  "initialize": function(exports, require, module) {
-    
-/*!
- @author 
- @since
-*/
-
-(function() {
-  var ApplicationView, BrunchApplication, MainRouter,
-    __hasProp = Object.prototype.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
-
-  BrunchApplication = require('helpers').BrunchApplication;
-
-  MainRouter = require('routers/main_router').MainRouter;
-
-  ApplicationView = require('views/ApplicationView').ApplicationView;
-
-  exports.Application = (function(_super) {
-
-    __extends(Application, _super);
-
-    function Application() {
-      Application.__super__.constructor.apply(this, arguments);
-    }
-
-    Application.prototype.initialize = function() {
-      this.router = new MainRouter;
-      return this.applicationView = new ApplicationView;
+  "templates/index": function(exports, require, module) {
+    module.exports = function(__obj) {
+  var _safe = function(value) {
+    if (typeof value === 'undefined' && value == null)
+      value = '';
+    var result = new String(value);
+    result.ecoSafe = true;
+    return result;
+  };
+  return (function() {
+    var __out = [], __self = this, _print = function(value) {
+      if (typeof value !== 'undefined' && value != null)
+        __out.push(value.ecoSafe ? value : __self.escape(value));
+    }, _capture = function(callback) {
+      var out = __out, result;
+      __out = [];
+      callback.call(this);
+      result = __out.join('');
+      __out = out;
+      return _safe(result);
     };
-
-    return Application;
-
-  })(BrunchApplication);
-
-  window.app = new exports.Application;
-
-}).call(this);
-
+    (function() {
+    
+      _print(_safe('\n<div id="content">\n  <h1>\n      Hey!\n  </h1>\n  \n  <div id="view-container">\n    \n  </div>\n</div>\n'));
+    
+    }).call(this);
+    
+    return __out.join('');
+  }).call((function() {
+    var obj = {
+      escape: function(value) {
+        return ('' + value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      },
+      safe: _safe
+    }, key;
+    for (key in __obj) obj[key] = __obj[key];
+    return obj;
+  })());
+};
   }
 }));
