@@ -25,3 +25,5 @@ class exports.ApplicationConfig
 	@BROWSER:
   	name: ""
   	version: -1
+  	
+	@GOOGLE_CHROMEFRAME_ENABLED: false

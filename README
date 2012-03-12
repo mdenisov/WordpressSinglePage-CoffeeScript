@@ -44,7 +44,9 @@ This plugin was created at The Museum of Modern Art for the weblog Inside/Out, w
 
 http://wordpress.org/extend/plugins/json-api/other_notes/
 
+***
 
+Includes Google ChromeFrame by default for < IE 9 standards support.  Check can be disabled in ApplicationConfig.coffee.  (TODO: Move Google CF into Wordpress Plugin)
 
 ---------------------
 Installation

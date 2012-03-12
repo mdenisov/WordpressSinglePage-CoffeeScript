@@ -11431,12 +11431,14 @@ window.jQuery = window.$ = jQuery;
       name: navigator.appName,
       version: jQuery.browser.version
     };
-    if (jQuery.browser.msie === true) {
-      if (jQuery.browser.version <= 8.0) {
-        CFInstall.check({
-          mode: "overlay",
-          destination: "http://www.yoursiteurl.com"
-        });
+    if (ApplicationConfig.GOOGLE_CHROMEFRAME_ENABLED === true) {
+      if (jQuery.browser.msie === true) {
+        if (jQuery.browser.version <= 8.0) {
+          CFInstall.check({
+            mode: "overlay",
+            destination: "http://www.yoursiteurl.com"
+          });
+        }
       }
     }
     return window.app = new exports.Application;
@@ -11601,6 +11603,8 @@ window.jQuery = window.$ = jQuery;
       name: "",
       version: -1
     };
+
+    ApplicationConfig.GOOGLE_CHROMEFRAME_ENABLED = false;
 
     return ApplicationConfig;
 
