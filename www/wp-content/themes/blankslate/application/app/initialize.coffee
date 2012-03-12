@@ -7,6 +7,7 @@
 
 {BrunchApplication} = require 'helpers'
 {MainRouter} = require 'routers/main_router'
+{ApplicationConfig} = require 'config/ApplicationConfig'
 {ApplicationView} = require 'views/ApplicationView'
 
 class exports.Application extends BrunchApplication
