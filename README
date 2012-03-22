@@ -6,7 +6,7 @@ Wordpress Single Page is a starting place for building single-page JavaScript ap
 
 Current Version Dependencies:
 Wordpress v 3.3.1
-Brunch v 0.0.9
+Brunch v 0.9.1
 
 ---------------------
 
@@ -64,7 +64,9 @@ An installer can be found there for Mac and Windows, as well as more detailed in
 2.  Brunch
 After installing node, execute via terminal 
 
-npm install -g brunch
+npm install -g brunch@0.9.1
+
+TODO:  Update application for Brunch 1.0 upgrade.  
 
 (More information can be found at http://brunch.io)
 
