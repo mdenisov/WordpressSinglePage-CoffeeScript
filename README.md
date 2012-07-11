@@ -1,4 +1,5 @@
 Wordpress Single Page
+=====================
 v 0.4
 
 Wordpress Single Page is a starting place for building single-page JavaScript applications on top of Backbone.js via the Brunch.io assembler (Backbone.js, CoffeeScript (or JavaScript), Handlebars, et al.) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
@@ -79,8 +80,9 @@ npm install -g brunch
 
 ***
 
-
+----------------
 Wordpress Setup
+----------------
 
 Quick-start:
 If you would like to skip the standard Wordpress install, a quick-start database has been provided in the folder db_quickstart.  
