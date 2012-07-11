@@ -48,6 +48,7 @@ module.exports = class HomeView extends View
 
 				@$el.html( @template( {
 					content: "Successfully received recent posts; view browser console for output."
+					posts: e.posts
 				} ) )
 
 			error: ( e ) =>

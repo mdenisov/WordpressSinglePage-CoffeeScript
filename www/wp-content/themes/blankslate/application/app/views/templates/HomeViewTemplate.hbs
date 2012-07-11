@@ -6,6 +6,11 @@
 -->
 
 <div id="content">
-	<h2>Wordpress SinglePage</h2>
+	<h2>WordpressBackbone</h2>
   	<div id="name">{{content}}</div>
+  	<ul>
+	  	{{#each posts}}
+	  	<li>{{this.content}}</li>
+	  	{{/each}}
+  	</ul>
 </div>
