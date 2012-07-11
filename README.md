@@ -1,4 +1,4 @@
-WordpressBackbone - JavaScript
+WordpressBackbone - CoffeeScript
 =====================
 v 0.4
 
