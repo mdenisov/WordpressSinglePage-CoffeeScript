@@ -1,12 +1,16 @@
-
 Wordpress Single Page
-v 0.0.1
+v 0.4
 
-Wordpress Single Page is a starting place for building single-page JavaScript applications on top of Backbone.js via the Brunch Framework (Backbone.js, CoffeeScript (or JavaScript), EcoTemplates, et al.) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
+Wordpress Single Page is a starting place for building single-page JavaScript applications on top of Backbone.js via the Brunch.io assembler (Backbone.js, CoffeeScript (or JavaScript), Handlebars, et al.) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
+
+Changelog:
+Updated application to support Brunch 1.0+ releases
+Revised application structure to support further configuration
+Replaced EcoTemplates with Handlebars
 
 Current Version Dependencies:
-Wordpress v 3.3.1
-Brunch v 0.9.1
+Wordpress v 3.3.1+
+Brunch v 1.3.3+
 
 ---------------------
 
@@ -64,9 +68,7 @@ An installer can be found there for Mac and Windows, as well as more detailed in
 2.  Brunch
 After installing node, execute via terminal 
 
-npm install -g brunch@0.9.1
-
-TODO:  Update application for Brunch 1.0 upgrade.  
+npm install -g brunch
 
 (More information can be found at http://brunch.io)
 
@@ -94,12 +96,17 @@ From scratch:
 
 
 Brunch Setup
-1.  Navigate to www/wp-content/themes/blankslate/application/app/config/ApplicationConfig.coffee and adjust the constant BASE_URL to point to your install directory
-2.  While the default brunch application has already been initialized in themes/blankslate/application, you'll still need to watch the directory for changes and output the files to the default theme directory.  cd into 'application' then execute
+1.  Navigate to `www/wp-content/themes/blankslate/application/app/config/ApplicationConfig.coffee` and adjust the constant BASE_URL to point to your install directory
+2.  More fine-grained control can be found in ...blankslate/application/app/config.coffee
+3.  While the default brunch application has already been initialized in themes/blankslate/application, you'll still need to watch the directory for changes and output the files to the default theme directory.  cd into `application` then execute
 
-brunch watch --output ../ --server
+`brunch build`
 
-This builds your project whenever you save a file and outputs the .js files into themes/blankslate/scripts and css files into themes/blankslate/styles, which Wordpress's index.php loads upon entry to the site.
+4.  If you would like brunch to continually watch for file changes and build, execute
+
+`brunch watch`
+
+This builds your project whenever you save a file and outputs the .js files into themes/blankslate/javascripts and css files into themes/blankslate/stylesheets, which Wordpress's index.php loads upon entry to the site.
 
 More options can be found at http://brunch.io  
 
