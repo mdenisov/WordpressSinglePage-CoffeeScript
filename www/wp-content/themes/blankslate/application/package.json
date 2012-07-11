@@ -1,23 +1,33 @@
 {
-  "author": "Christopher Pappas",
-  "name": "wp-single-page",
-  "description": "Brunch component to WP-SinglePage",
+  "author": "Your Name",
+  "name": "package-name",
+  "description": "Package description",
   "version": "0.0.1",
-  "homepage": "http://www.quityourbank.org",
+  "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/damassi/WordpressSinglePage"
+    "url": ""
   },
   "engines": {
-    "node": "~0.6.6"
+    "node": "~0.6.10"
   },
   "scripts": {
-    "start": "brunch watch --output ../ --server"
-  },  
+    "start": "brunch watch --server"
+  },
   "dependencies": {
-    "brunch-extensions": "0.1.0"
+    "javascript-brunch": "> 1.0 < 1.3",
+    "coffee-script-brunch": "> 1.0 < 1.3",
+
+    "css-brunch": "> 1.0 < 1.3",
+    "stylus-brunch": "> 1.0 < 1.3",
+
+    "handlebars-brunch": "> 1.0 < 1.3",
+
+    "uglify-js-brunch": "> 1.0 < 1.3",
+    "clean-css-brunch": "> 1.0 < 1.3"
   },
   "devDependencies": {
-    
+    "mocha": "0.14.0",
+    "expect.js": "0.1.2"
   }
 }
