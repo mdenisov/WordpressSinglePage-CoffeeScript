@@ -2,12 +2,14 @@ WordpressBackbone - CoffeeScript
 =====================
 v 0.4
 
-WordpressBackbone is a starting place for building Backbone.js applications on top of the Brunch.io app-assembler (Backbone.js, JavaScript, Handlebars, et al.) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
+WordpressBackbone is a starting place for building Backbone.js applications on top of the Brunch.io app-assembler (Backbone.js, CoffeeScript, Handlebars, et al.) and Wordpress JSON api (http://wordpress.org/extend/plugins/json-api/)
 
 Changelog:
 Updated application to support Brunch 1.0+ releases
 Revised application structure to support further configuration
 Replaced EcoTemplates with Handlebars
+
+(For a pure JS version of this project, see: https://github.com/damassi/WordpressBackbone-JavaScript)
 
 Current Version Dependencies:
 Wordpress v 3.3.1+
