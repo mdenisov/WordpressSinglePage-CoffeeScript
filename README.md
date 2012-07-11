@@ -1,4 +1,4 @@
-WordpressBackbone - CoffeeScript
+WordpressSinglePage - CoffeeScript
 =====================
 v 0.4
 
